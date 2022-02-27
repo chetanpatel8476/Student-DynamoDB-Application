@@ -1,7 +1,7 @@
 // Added Shared Library
 library identifier: 'cicdjenkins@master', retriever: modernSCM(
     [$class: 'GitSCMSource',
-    remote: 'git@github.com:chetanpatel8476/jenkins-shared-library.git',
+    remote: 'https://github.com/chetanpatel8476/jenkins-shared-library.git',
     //credentialsId: 'svc.devops-ut'
     ]
 )
