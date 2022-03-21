@@ -4,6 +4,7 @@ import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRep
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
@@ -24,18 +25,11 @@ public class DynamoDBConfig {
 	@Value("${amazon.aws.secretkey}")
 	private String secretKey;
 
-	//@Bean
-	//public DynamoDBMapper dynamoDBMapper() {
-		//return new DynamoDBMapper(amazonDynamoDB());
-	//}
-
 	@Bean
 	public AmazonDynamoDB amazonDynamoDB() {
-		// AmazonDynamoDB dynamoDB = new AmazonDynamoDBClient(amazonAWSCredentials());
 		AmazonDynamoDB dynamoDB = AmazonDynamoDBClientBuilder.standard()
 				.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(dBEndpoint, "eu-west-1"))
 				.withCredentials(amazonAWSCredentials()).build();
-
 		return dynamoDB;
 	}
 
