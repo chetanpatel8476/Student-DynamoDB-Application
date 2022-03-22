@@ -6,4 +6,4 @@ library identifier: 'cicdjenkins@master', retriever: modernSCM(
     ]
 )
 
-buildStudentApp 'https://github.com/chetanpatel8476/Student-DynamoDB-Application.git'
+buildStudentApp 'https://github.com/chetanpatel8476/Student-DynamoDB-Application.git', 'com.mydevopslab.studentapp'
