@@ -25,7 +25,7 @@ public class StudentDynamoDBController {
 	@Autowired
 	private StudentDynamoDBServiceImpl studentDynamoDBServiceImpl;
 
-	@RequestMapping(value = "/students", method = RequestMethod.GET)
+	@RequestMapping(value = "/liststudents", method = RequestMethod.GET)
 	public ResponseEntity<Iterable<StudentDynamoDB>> listAllStudents() {
 		ResponseEntity<Iterable<StudentDynamoDB>> response = null;
 		try {
